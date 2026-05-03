@@ -128,7 +128,19 @@ Notre établissement s’engage à offrir une éducation de qualité, fondée su
 <div class="card">
 <h3>Inscription en ligne 📝</h3>
 
-<form onsubmit="sendForm(event)">
+<form <h2>Inscription en ligne</h2>
+
+<form action="https://formspree.io/f/mwvylkyk" method="POST">
+  <input type="text" name="nom" placeholder="Nom de l'élève" required>
+  <input type="text" name="prenom" placeholder="Prénom" required>
+  <input type="number" name="age" placeholder="Âge" required>
+  <input type="text" name="classe" placeholder="Classe" required>
+  <input type="email" name="email" placeholder="Email du parent" required>
+  <input type="text" name="telephone" placeholder="Téléphone" required>
+
+  <button type="submit">Envoyer l'inscription</button>
+    </form>
+    onsubmit="sendForm(event)">
 <input type="text" placeholder="Nom complet" required>
 <input type="number" placeholder="Âge" required>
 

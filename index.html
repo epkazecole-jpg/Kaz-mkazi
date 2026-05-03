@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KAZ Mkazi - École Privée</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ece5dd;
+}
+
+/* HEADER */
+header {
+    background: #075E54;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* MENU */
+nav {
+    display: flex;
+    justify-content: space-around;
+    background: #128C7E;
+    padding: 10px;
+}
+
+nav button {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* CONTENT */
+.page {
+    display: none;
+    padding: 15px;
+}
+
+.active {
+    display: block;
+}
+
+/* CARD STYLE */
+.card {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+/* FORM */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button.submit {
+    background: #25D366;
+    color: white;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #075E54;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>École Privée KAZ</h2>
+<p>Mkazi Bambao - Quartier SAHARA 🇰🇲</p>
+</header>
+
+<nav>
+<button onclick="showPage('accueil')">Accueil</button>
+<button onclick="showPage('ecole')">École</button>
+<button onclick="showPage('inscription')">Inscription</button>
+<button onclick="showPage('contact')">Contact</button>
+</nav>
+
+<!-- ACCUEIL -->
+<div id="accueil" class="page active">
+<div class="card">
+<h3>Bienvenue 👋</h3>
+<p>
+École Privée KAZ accompagne les élèves vers la réussite
+du collège au lycée avec discipline et excellence.
+</p>
+</div>
+</div>
+
+<!-- ECOLE -->
+<div id="ecole" class="page">
+<div class="card">
+<h3>Notre école</h3>
+<ul>
+<li>✔ Encadrement sérieux</li>
+<li>✔ Suivi personnalisé</li>
+<li>✔ Préparation BEPC & BAC</li>
+</ul>
+</div>
+</div>
+
+<!-- INSCRIPTION -->
+<div id="inscription" class="page">
+<div class="card">
+<h3>Inscription en ligne 📝</h3>
+
+<form onsubmit="sendForm(event)">
+<input type="text" placeholder="Nom complet" required>
+<input type="number" placeholder="Âge" required>
+
+<select required>
+<option value="">Classe</option>
+<option>6ème</option>
+<option>5ème</option>
+<option>4ème</option>
+<option>3ème</option>
+<option>Seconde</option>
+<option>Première</option>
+<option>Terminale</option>
+</select>
+
+<input type="tel" placeholder="Téléphone" required>
+
+<button class="submit">Envoyer la demande</button>
+</form>
+
+</div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page">
+<div class="card">
+<h3>Contact 📞</h3>
+<p>📍 Mkazi Bambao - Sahara</p>
+<p>📱 +269 XXX XXX</p>
+<p>📧 kaz.mkazi@gmail.com</p>
+</div>
+</div>
+
+<footer>
+© 2026 KAZ Mkazi
+</footer>
+
+<script>
+function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+}
+
+function sendForm(e) {
+    e.preventDefault();
+    alert("Inscription envoyée avec succès !");
+}
+</script>
+
+</body>
+</html>
